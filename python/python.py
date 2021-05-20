@@ -2,6 +2,9 @@ import csv
 import pandas
 import time
 from datetime import timedelta
+import os
+
+working_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 def start_time_measure(message=None):
     if message:
@@ -19,9 +22,9 @@ total_start_time = start_time_measure()
 phone_users_with_ip = []
 phone_users = []
 
-device_file = '.\\data\\csv\\DevicesWithInventoryUsernameOnly.csv'
+device_file = working_dir + '\\data\\csv\\DevicesWithInventoryUsernameOnly.csv'
 
-signin_file = '.\\data\\csv\\InteractiveSignIns.csv'
+signin_file = working_dir + '\\data\\csv\\InteractiveSignIns.csv'
 
 df = pandas.read_csv(device_file)
 
@@ -55,11 +58,11 @@ print(len(result_list_ip))
 print(len(result_list))
 print(blah)
 for i in result_list:
-    f = open(".\\data\\output\\usersoutputpython.csv", "a")
+    f = open(working_dir + "\\data\\output\\usersoutputpython.csv", "a")
     f.write(i + "\n")
     f.close()
 for i in result_list_ip:
-    f = open(".\\data\\output\\usersoutputwithippython.csv", "a")
+    f = open(working_dir + "\\data\\output\\usersoutputwithippython.csv", "a")
     f.write(i + "\n")
     f.close()
 
