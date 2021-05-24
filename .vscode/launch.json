@@ -18,7 +18,7 @@
       "name": "(Windows) Launch",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "C:/Users/tcowdrey.HSA/source/repos/dataproc/rust/target/debug/rust.exe",
+      "program": "C:/Users/tcowdrey.HSA/source/repos/dataproc/rust/target/release/rust.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

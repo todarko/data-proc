@@ -4,4 +4,4 @@
 
 Currently used languages include C#, python, and rust
 
-Each project I've tried to roughly use the same methods. Python was around 10s, C# ~4s and rust was under 2s, on average
+Each project I've tried to roughly use the same methods. Python was around 2.8s, C# ~.4s, and rust was ~.1s, on average
