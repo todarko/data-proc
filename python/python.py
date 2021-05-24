@@ -42,7 +42,7 @@ for index, row in sf.iterrows():
     #print(ip_address)
 
     # Break if IP Address in our domain
-    if ip_address == '1234.236.747.668' or ip_address == '5088.21.471.898' or ip_address == '1277.188.20.8202':
+    if ip_address == '1211.2223.3374.6644' or ip_address == '2250.23331.4221.9822' or ip_address == '1332.1398.2110.2022':
         blah = blah + 1 
     elif username not in email_list:
         phone_users_with_ip.append(username + ',' + ip_address)
@@ -57,13 +57,13 @@ result_list = list(dict.fromkeys(phone_users))
 print(len(result_list_ip))
 print(len(result_list))
 print(blah)
+f = open(working_dir + "\\data\\output\\usersoutputpython.csv", "a")
 for i in result_list:
-    f = open(working_dir + "\\data\\output\\usersoutputpython.csv", "a")
     f.write(i + "\n")
-    f.close()
+f.close()
+f = open(working_dir + "\\data\\output\\usersoutputwithippython.csv", "a")
 for i in result_list_ip:
-    f = open(working_dir + "\\data\\output\\usersoutputwithippython.csv", "a")
     f.write(i + "\n")
-    f.close()
+f.close()
 
 end_time_measure(total_start_time, 'Elapsed Time Pythong: ')

@@ -38,7 +38,7 @@ fn process_file() -> Result<(), Box<dyn Error>> {
         let mut record2: SignInRecord = record2?;
         record2.email = record2.email.to_ascii_uppercase();
         
-        if record2.ipaddress == "1234.236.747.668" || record2.ipaddress == "5088.21.471.898" || record2.ipaddress == "1277.188.20.8202" {
+        if record2.ipaddress == "1211.2223.3374.6644" || record2.ipaddress == "2250.23331.4221.9822" || record2.ipaddress == "1332.1398.2110.2022" {
             blah = blah + 1;
         } else if !email_list.contains(&record2.email) {
             let rec_clone = record2.clone();

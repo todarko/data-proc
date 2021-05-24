@@ -26,8 +26,8 @@ namespace c_
         {
             string[] values = csvLine.Split(',');
             SignInUser signInUser = new SignInUser();
-            signInUser.email = values[5].ToUpper();
-            signInUser.ipaddress = values[13];
+            signInUser.email = values[1].ToUpper();
+            signInUser.ipaddress = values[5];
             return signInUser;
         }
     }
@@ -41,8 +41,8 @@ namespace c_
             List<SignInUser> phone_users_with_ip = new List<SignInUser>();
             List<EmailRecord> phone_users = new List<EmailRecord>();
 
-            var df = @".\\data\\csv\\DevicesWithInventoryUsernameOnly.csv";
-            var sf = @".\\data\\csv\\InteractiveSignIns.csv";
+            var df = @"..\\data\\csv\\DevicesWithInventoryUsernameOnly.csv";
+            var sf = @"..\\data\\csv\\InteractiveSignIns.csv";
 
             List<EmailRecord> email_list = File.ReadAllLines(df)
                                            .Skip(1)
@@ -55,7 +55,7 @@ namespace c_
 
             for (int i = 0; i < sign_in_users.Count; i++)
             {
-                if (sign_in_users[i].ipaddress == "12.23.74.66" || sign_in_users[i].ipaddress == "50.231.41.98" || sign_in_users[i].ipaddress == "12.198.220.202")
+                if (sign_in_users[i].ipaddress == "1211.2223.3374.6644" || sign_in_users[i].ipaddress == "2250.23331.4221.9822" || sign_in_users[i].ipaddress == "1332.1398.2110.2022")
                 {
                     blah++;
                 }
@@ -63,6 +63,7 @@ namespace c_
                 {
                     phone_users.Add(new EmailRecord { email = sign_in_users[i].email });
                     phone_users_with_ip.Add(new SignInUser { email = sign_in_users[i].email, ipaddress = sign_in_users[i].ipaddress });
+                    blah++;
                 }
                 else
                 {
@@ -78,14 +79,14 @@ namespace c_
             Console.WriteLine(unique_phone_users.Count());
             Console.WriteLine(unique_phone_users_with_ip.Count());
 
-            using (StreamWriter file = new StreamWriter(@"\\hsa.org\root\users\TCowdrey\sign in proj\usersoutputcsharp.csv"))
+            using (StreamWriter file = new StreamWriter(@"..\\data\\output\\usersoutputcsharp.csv"))
             {
                 foreach (var line in unique_phone_users)
                 {
                     file.WriteLine(line);
                 }
             }
-            using (StreamWriter file = new StreamWriter(@"\\hsa.org\root\users\TCowdrey\sign in proj\usersoutputwithipcsharp.csv"))
+            using (StreamWriter file = new StreamWriter(@"..\\data\\output\\usersoutputwithipcsharp.csv"))
             {
                 foreach (var line in unique_phone_users_with_ip)
                 {
